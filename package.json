@@ -1,0 +1,14 @@
+{
+  "name": "animark",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter animark-core --filter animark-react -r build",
+    "dev": "pnpm -r dev",
+    "demo": "pnpm --filter animark-demo dev",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r exec rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

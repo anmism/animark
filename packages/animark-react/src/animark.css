@@ -1,0 +1,410 @@
+/**
+ * animark.css
+ * Import once in your app root: import "animark-react/styles"
+ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   ENTRANCE KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes amk-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes amk-slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amk-slide-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amk-slide-left {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes amk-slide-right {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes amk-scale-in {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes amk-blur-in {
+  from { opacity: 0; filter: blur(12px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+@keyframes amk-bounce-in {
+  0%   { opacity: 0; transform: scale(0.3) translateY(40px); }
+  50%  { opacity: 1; transform: scale(1.05) translateY(-4px); }
+  70%  {             transform: scale(0.98) translateY(2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes amk-flip-in {
+  from { opacity: 0; transform: perspective(400px) rotateX(80deg); }
+  to   { opacity: 1; transform: perspective(400px) rotateX(0deg); }
+}
+@keyframes amk-glitch-in {
+  0%   { opacity: 0; clip-path: inset(80% 0 0 0);   transform: translate(-4px, 2px); }
+  10%  { opacity: 1; clip-path: inset(10% 0 70% 0); transform: translate(4px, -2px); }
+  20%  {             clip-path: inset(60% 0 20% 0);  transform: translate(-3px, 1px); }
+  30%  {             clip-path: inset(0% 0 80% 0);   transform: translate(3px, -1px); }
+  40%  {             clip-path: inset(40% 0 40% 0);  transform: translate(-2px, 2px); }
+  60%  {             clip-path: inset(20% 0 60% 0);  transform: translate(2px, -2px); }
+  80%  {             clip-path: inset(0 0 0 0);       transform: translate(-1px, 1px); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0);       transform: translate(0, 0); }
+}
+@keyframes amk-translateX-left {
+  from { opacity: 0; transform: translateX(var(--amk-amount, 40px)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes amk-translateX-right {
+  from { opacity: 0; transform: translateX(var(--amk-amount-neg, -40px)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes amk-translateY-up {
+  from { opacity: 0; transform: translateY(var(--amk-amount, 40px)); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amk-translateY-down {
+  from { opacity: 0; transform: translateY(var(--amk-amount-neg, -40px)); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amk-translateZ {
+  from { opacity: 0; transform: perspective(600px) translateZ(var(--amk-amount, -80px)); }
+  to   { opacity: 1; transform: perspective(600px) translateZ(0); }
+}
+@keyframes amk-rotate-cw {
+  from { opacity: 0; transform: rotate(var(--amk-amount, -45deg)); }
+  to   { opacity: 1; transform: rotate(0deg); }
+}
+@keyframes amk-rotate-ccw {
+  from { opacity: 0; transform: rotate(var(--amk-amount, 45deg)); }
+  to   { opacity: 1; transform: rotate(0deg); }
+}
+@keyframes amk-rotateX {
+  from { opacity: 0; transform: rotateX(var(--amk-amount, 90deg)); }
+  to   { opacity: 1; transform: rotateX(0deg); }
+}
+@keyframes amk-rotateY {
+  from { opacity: 0; transform: rotateY(var(--amk-amount, 90deg)); }
+  to   { opacity: 1; transform: rotateY(0deg); }
+}
+@keyframes amk-skew {
+  from { opacity: 0; transform: skewX(var(--amk-amount, 20deg)); }
+  to   { opacity: 1; transform: skewX(0deg); }
+}
+@keyframes amk-scaleX {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+@keyframes amk-scaleY {
+  from { opacity: 0; transform: scaleY(0); }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+@keyframes amk-appear {
+  0%   { opacity: 0; }
+  1%   { opacity: 1; }
+  100% { opacity: 1; }
+}
+@keyframes amk-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EXIT KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes amk-fade-out {
+  from { opacity: 1; } to { opacity: 0; }
+}
+@keyframes amk-slide-out-up {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-24px); }
+}
+@keyframes amk-slide-out-down {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(24px); }
+}
+@keyframes amk-slide-out-left {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-24px); }
+}
+@keyframes amk-slide-out-right {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(24px); }
+}
+@keyframes amk-scale-out {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.88); }
+}
+@keyframes amk-blur-out {
+  from { opacity: 1; filter: blur(0); }
+  to   { opacity: 0; filter: blur(12px); }
+}
+@keyframes amk-translateX-out-left {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(calc(var(--amk-amount, 40px) * -1)); }
+}
+@keyframes amk-translateX-out-right {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(var(--amk-amount, 40px)); }
+}
+@keyframes amk-translateY-out-up {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(calc(var(--amk-amount, 40px) * -1)); }
+}
+@keyframes amk-translateY-out-down {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(var(--amk-amount, 40px)); }
+}
+@keyframes amk-translateZ-out {
+  from { opacity: 1; transform: perspective(600px) translateZ(0); }
+  to   { opacity: 0; transform: perspective(600px) translateZ(var(--amk-amount, -80px)); }
+}
+@keyframes amk-rotate-out-cw {
+  from { opacity: 1; transform: rotate(0deg); }
+  to   { opacity: 0; transform: rotate(var(--amk-amount, 45deg)); }
+}
+@keyframes amk-rotate-out-ccw {
+  from { opacity: 1; transform: rotate(0deg); }
+  to   { opacity: 0; transform: rotate(var(--amk-amount, -45deg)); }
+}
+@keyframes amk-rotateX-out {
+  from { opacity: 1; transform: rotateX(0deg); }
+  to   { opacity: 0; transform: rotateX(var(--amk-amount, 90deg)); }
+}
+@keyframes amk-rotateY-out {
+  from { opacity: 1; transform: rotateY(0deg); }
+  to   { opacity: 0; transform: rotateY(var(--amk-amount, 90deg)); }
+}
+@keyframes amk-skew-out {
+  from { opacity: 1; transform: skewX(0deg); }
+  to   { opacity: 0; transform: skewX(var(--amk-amount, 20deg)); }
+}
+@keyframes amk-scaleX-out {
+  from { opacity: 1; transform: scaleX(1); }
+  to   { opacity: 0; transform: scaleX(0); }
+}
+@keyframes amk-scaleY-out {
+  from { opacity: 1; transform: scaleY(1); }
+  to   { opacity: 0; transform: scaleY(0); }
+}
+@keyframes amk-disappear {
+  0%   { opacity: 1; }
+  99%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes amk-reveal-out {
+  from { clip-path: inset(0 0% 0 0); }
+  to   { clip-path: inset(0 100% 0 0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ATTENTION KEYFRAMES (looping)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes amk-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(var(--amk-amount, 1.06)); }
+}
+@keyframes amk-shake {
+  0%, 100% { transform: translateX(0); }
+  15%      { transform: translateX(calc(var(--amk-amount, 8px) * -1)); }
+  30%      { transform: translateX(var(--amk-amount, 8px)); }
+  45%      { transform: translateX(calc(var(--amk-amount, 8px) * -0.75)); }
+  60%      { transform: translateX(calc(var(--amk-amount, 8px) * 0.75)); }
+  75%      { transform: translateX(calc(var(--amk-amount, 8px) * -0.5)); }
+  90%      { transform: translateX(calc(var(--amk-amount, 8px) * 0.5)); }
+}
+@keyframes amk-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20%      { transform: rotate(calc(var(--amk-amount, 10deg) * -1)); }
+  40%      { transform: rotate(var(--amk-amount, 10deg)); }
+  60%      { transform: rotate(calc(var(--amk-amount, 10deg) * -0.6)); }
+  80%      { transform: rotate(calc(var(--amk-amount, 10deg) * 0.6)); }
+}
+@keyframes amk-heartbeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(var(--amk-amount, 1.12)); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(var(--amk-amount, 1.12)); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+@keyframes amk-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(var(--amk-amount, -10px)); }
+}
+@keyframes amk-magnetic-float {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(3px, -3px) rotate(0.5deg); }
+  50%  { transform: translate(-2px, 2px) rotate(-0.5deg); }
+  75%  { transform: translate(2px, 3px) rotate(0.3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEXT KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes amk-char-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amk-highlight-sweep {
+  from { background-size: 0%   100%; }
+  to   { background-size: 100% 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BASE WRAPPER CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-wrapper {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.amk-exit {
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.amk-loop {
+  animation-fill-mode: none;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .amk-wrapper, .amk-exit, .amk-loop {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ENTRANCE UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-fade        { animation-name: amk-fade-in; }
+.amk-scale       { animation-name: amk-scale-in; }
+.amk-blur        { animation-name: amk-blur-in; }
+.amk-bounce      { animation-name: amk-bounce-in; }
+.amk-flip        { animation-name: amk-flip-in; }
+.amk-glitch      { animation-name: amk-glitch-in; }
+.amk-appear      { animation-name: amk-appear; }
+.amk-reveal      { animation-name: amk-reveal; overflow: hidden; }
+
+.amk-slide-up    { animation-name: amk-slide-up; }
+.amk-slide-down  { animation-name: amk-slide-down; }
+.amk-slide-left  { animation-name: amk-slide-left; }
+.amk-slide-right { animation-name: amk-slide-right; }
+
+.amk-translateX-left  { animation-name: amk-translateX-left; }
+.amk-translateX-right { animation-name: amk-translateX-right; }
+.amk-translateY-up    { animation-name: amk-translateY-up; }
+.amk-translateY-down  { animation-name: amk-translateY-down; }
+.amk-translateZ       { animation-name: amk-translateZ; }
+
+.amk-rotate-cw  { animation-name: amk-rotate-cw; }
+.amk-rotate-ccw { animation-name: amk-rotate-ccw; }
+
+.amk-rotateX { animation-name: amk-rotateX; transform-style: preserve-3d; perspective: 600px; }
+.amk-rotateY { animation-name: amk-rotateY; transform-style: preserve-3d; perspective: 600px; }
+
+.amk-skew  { animation-name: amk-skew; }
+.amk-scaleX { animation-name: amk-scaleX; transform-origin: left center; }
+.amk-scaleY { animation-name: amk-scaleY; transform-origin: top center; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   EXIT UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-fade-out    { animation-name: amk-fade-out; }
+.amk-scale-out   { animation-name: amk-scale-out; }
+.amk-blur-out    { animation-name: amk-blur-out; }
+.amk-disappear   { animation-name: amk-disappear; }
+.amk-reveal-out  { animation-name: amk-reveal-out; overflow: hidden; }
+
+.amk-slide-out-up    { animation-name: amk-slide-out-up; }
+.amk-slide-out-down  { animation-name: amk-slide-out-down; }
+.amk-slide-out-left  { animation-name: amk-slide-out-left; }
+.amk-slide-out-right { animation-name: amk-slide-out-right; }
+
+.amk-translateX-out-left  { animation-name: amk-translateX-out-left; }
+.amk-translateX-out-right { animation-name: amk-translateX-out-right; }
+.amk-translateY-out-up    { animation-name: amk-translateY-out-up; }
+.amk-translateY-out-down  { animation-name: amk-translateY-out-down; }
+.amk-translateZ-out       { animation-name: amk-translateZ-out; }
+
+.amk-rotate-out-cw  { animation-name: amk-rotate-out-cw; }
+.amk-rotate-out-ccw { animation-name: amk-rotate-out-ccw; }
+
+.amk-rotateX-out { animation-name: amk-rotateX-out; transform-style: preserve-3d; perspective: 600px; }
+.amk-rotateY-out { animation-name: amk-rotateY-out; transform-style: preserve-3d; perspective: 600px; }
+
+.amk-skew-out   { animation-name: amk-skew-out; }
+.amk-scaleX-out { animation-name: amk-scaleX-out; transform-origin: left center; }
+.amk-scaleY-out { animation-name: amk-scaleY-out; transform-origin: top center; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ATTENTION UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-pulse     { animation-name: amk-pulse; }
+.amk-shake     { animation-name: amk-shake; }
+.amk-wiggle    { animation-name: amk-wiggle; }
+.amk-heartbeat { animation-name: amk-heartbeat; }
+.amk-float     { animation-name: amk-float; }
+.amk-magnetic  { animation-name: amk-magnetic-float; }
+
+.amk-hover-lift {
+  display: inline-block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.amk-hover-lift:hover { transform: translateY(-6px); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEXT UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-typing { display: inline-block; }
+
+.amk-typing-char {
+  display: inline-block;
+  opacity: 0;
+  animation-name: amk-char-appear;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-duration: 80ms;
+}
+
+/* Inline highlight — the span is the target */
+.amk-highlight.amk-highlight--inline {
+  display: inline;
+  background: linear-gradient(yellow, yellow) no-repeat left center;
+  background-size: 0% 100%;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding: 0 0.12em;
+  animation: amk-highlight-sweep
+    var(--amk-hl-duration, 600ms)
+    ease-out
+    var(--amk-hl-delay, 0ms)
+    forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CONTROLS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.amk-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}

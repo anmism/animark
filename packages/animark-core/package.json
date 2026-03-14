@@ -1,0 +1,38 @@
+{
+  "name": "animark-core",
+  "version": "1.0.0",
+  "description": "Framework-agnostic remark plugin for animark — scope containers + animated inline spans",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest run"
+  },
+  "keywords": ["remark", "markdown", "animation", "directive"],
+  "license": "MIT",
+  "dependencies": {
+    "@types/mdast": "^4.0.4",
+    "@types/unist": "^3.0.3",
+    "mdast-util-directive": "^3.1.0",
+    "remark-directive": "^4.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "peerDependencies": { "remark": "^15.0.0" },
+  "devDependencies": {
+    "remark": "^15.0.0",
+    "tsup": "^8.5.1",
+    "vitest": "^4.0.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "animark-react",
+  "version": "1.0.0",
+  "description": "Animated inline Markdown for React. :::animation scopes inline :animate[text]{} spans.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./src/animark.css"
+  },
+  "files": ["dist", "src/animark.css"],
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev":   "tsc -p tsconfig.json --watch",
+    "test":  "vitest run"
+  },
+  "keywords": ["react", "markdown", "animation", "animark", "remark", "inline"],
+  "license": "MIT",
+  "dependencies": {
+    "animark-core":     "workspace:*",
+    "react-markdown":   "^10.1.0",
+    "remark-directive": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react":     ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react":     "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tsup":             "^8.0.0",
+    "vitest":           "^4.0.0"
+  }
+}
