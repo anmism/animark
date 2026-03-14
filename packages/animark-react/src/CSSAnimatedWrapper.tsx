@@ -14,6 +14,7 @@ const EXIT_TYPES  = new Set([
   "skew-out","scaleX-out","scaleY-out",
   "disappear","reveal-out",
 ]);
+
 const CLIP_TYPES  = new Set([
   "slide","bounce","translateX","translateY","translateZ",
   "rotate","rotateX","rotateY","skew","flip","glitch",
@@ -196,15 +197,15 @@ export const CSSAnimatedWrapper: React.FC<CSSAnimatedWrapperProps> = ({
   const isOnClick   = trigger === "on-click";
   const effectiveDelay = isSequenced ? (reg?.effectiveDelay ?? delay) : delay;
   const clickIndex     = reg?.clickIndex ?? 0;
-  const isActivated    = !isOnClick || clickCount >= clickIndex;
+  const isActivated = clickIndex === 0 || clickCount >= clickIndex;
 
   // Guards: render invisible placeholder until ready
   if (isSequenced && reg === null) {
     return <span style={{ visibility: isExit ? "visible" : "hidden" }}>{children}</span>;
   }
-  if (isOnClick && !isActivated) {
-    return <span style={{ visibility: isExit ? "visible" : "hidden" }}>{children}</span>;
-  }
+  if (!isActivated) {
+  return <span style={{ visibility: isExit ? "visible" : "hidden" }}>{children}</span>;
+}
 
   const animKey = isOnClick
     ? `${playCount}-click-${clickIndex}`

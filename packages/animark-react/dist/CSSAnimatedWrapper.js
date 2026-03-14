@@ -164,12 +164,12 @@ export const CSSAnimatedWrapper = ({ animation, children, className = "", style 
     const isOnClick = trigger === "on-click";
     const effectiveDelay = isSequenced ? (reg?.effectiveDelay ?? delay) : delay;
     const clickIndex = reg?.clickIndex ?? 0;
-    const isActivated = !isOnClick || clickCount >= clickIndex;
+    const isActivated = clickIndex === 0 || clickCount >= clickIndex;
     // Guards: render invisible placeholder until ready
     if (isSequenced && reg === null) {
         return _jsx("span", { style: { visibility: isExit ? "visible" : "hidden" }, children: children });
     }
-    if (isOnClick && !isActivated) {
+    if (!isActivated) {
         return _jsx("span", { style: { visibility: isExit ? "visible" : "hidden" }, children: children });
     }
     const animKey = isOnClick
