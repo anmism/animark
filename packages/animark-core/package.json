@@ -1,7 +1,27 @@
 {
   "name": "animark-core",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Framework-agnostic remark plugin for animark — scope containers + animated inline spans",
+  "author": "anmism",
+  "license": "MIT",
+  "homepage": "https://github.com/anmism/animark#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anmism/animark.git",
+    "directory": "packages/animark-core"
+  },
+  "bugs": {
+    "url": "https://github.com/anmism/animark/issues"
+  },
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "markdown",
+    "animation",
+    "directive",
+    "mdast",
+    "unified"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -12,27 +32,41 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
-    "test": "vitest run"
+    "build":   "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev":     "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test":    "vitest run",
+    "prepublishOnly": "pnpm build"
   },
-  "keywords": ["remark", "markdown", "animation", "directive"],
-  "license": "MIT",
   "dependencies": {
-    "@types/mdast": "^4.0.4",
-    "@types/unist": "^3.0.3",
+    "@types/mdast":         "^4.0.4",
+    "@types/unist":         "^3.0.3",
     "mdast-util-directive": "^3.1.0",
-    "remark-directive": "^4.0.0",
-    "unified": "^11.0.5",
-    "unist-util-visit": "^5.0.0"
+    "remark-directive":     "^4.0.0",
+    "unified":              "^11.0.5",
+    "unist-util-visit":     "^5.0.0"
   },
-  "peerDependencies": { "remark": "^15.0.0" },
+  "peerDependencies": {
+    "remark": "^15.0.0"
+  },
+  "peerDependenciesMeta": {
+    "remark": { "optional": true }
+  },
   "devDependencies": {
-    "remark": "^15.0.0",
-    "tsup": "^8.5.1",
-    "vitest": "^4.0.0"
+    "remark":  "^15.0.0",
+    "tsup":    "^8.5.1",
+    "vitest":  "^4.0.0"
   }
 }

@@ -104,9 +104,9 @@ A second, completely independent scope. Has its own replay button.
 
 ## Animation types
 
-**Entrance:** `fade` `slide` `scale` `blur` `bounce` `flip` `glitch` `translateX` `translateY` `translateZ` `rotate` `rotateX` `rotateY` `skew` `scaleX` `scaleY` `appear` `reveal`
+**Entrance:** `fade` `slide` `scale` `blur` `bounce` `flip` `glitch` `translateX` `translateY` `rotate` `rotateX` `rotateY` `skew` `scaleX` `scaleY` `appear` `reveal`
 
-**Exit:** `fade-out` `slide-out` `scale-out` `blur-out` `translateX-out` `translateY-out` `translateZ-out` `rotate-out` `rotateX-out` `rotateY-out` `skew-out` `scaleX-out` `scaleY-out` `disappear` `reveal-out`
+**Exit:** `fade-out` `slide-out` `scale-out` `blur-out` `translateX-out` `translateY-out` `rotate-out` `rotateX-out` `rotateY-out` `skew-out` `scaleX-out` `scaleY-out` `disappear` `reveal-out`
 
 **Attention (looping):** `pulse` `shake` `wiggle` `heartbeat` `float` `hover-lift` `magnetic`
 

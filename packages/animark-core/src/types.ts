@@ -6,7 +6,7 @@ export type AnimationType =
   // Basic entrances
   | "fade" | "slide" | "scale" | "blur" | "bounce" | "flip" | "glitch"
   // Transform entrances
-  | "translateX" | "translateY" | "translateZ"
+  | "translateX" | "translateY" 
   | "rotate" | "rotateX" | "rotateY"
   | "skew" | "scaleX" | "scaleY"
   // Special entrances
@@ -14,7 +14,7 @@ export type AnimationType =
   // Basic exits
   | "fade-out" | "slide-out" | "scale-out" | "blur-out"
   // Transform exits
-  | "translateX-out" | "translateY-out" | "translateZ-out"
+  | "translateX-out" | "translateY-out"
   | "rotate-out" | "rotateX-out" | "rotateY-out"
   | "skew-out" | "scaleX-out" | "scaleY-out"
   // Special exits

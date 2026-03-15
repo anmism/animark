@@ -71,10 +71,6 @@
   from { opacity: 0; transform: translateY(var(--amk-amount-neg, -40px)); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes amk-translateZ {
-  from { opacity: 0; transform: perspective(600px) translateZ(var(--amk-amount, -80px)); }
-  to   { opacity: 1; transform: perspective(600px) translateZ(0); }
-}
 @keyframes amk-rotate-cw {
   from { opacity: 0; transform: rotate(var(--amk-amount, -45deg)); }
   to   { opacity: 1; transform: rotate(0deg); }
@@ -159,10 +155,6 @@
 @keyframes amk-translateY-out-down {
   from { opacity: 1; transform: translateY(0); }
   to   { opacity: 0; transform: translateY(var(--amk-amount, 40px)); }
-}
-@keyframes amk-translateZ-out {
-  from { opacity: 1; transform: perspective(600px) translateZ(0); }
-  to   { opacity: 0; transform: perspective(600px) translateZ(var(--amk-amount, -80px)); }
 }
 @keyframes amk-rotate-out-cw {
   from { opacity: 1; transform: rotate(0deg); }
@@ -306,7 +298,6 @@
 .amk-translateX-right { animation-name: amk-translateX-right; }
 .amk-translateY-up    { animation-name: amk-translateY-up; }
 .amk-translateY-down  { animation-name: amk-translateY-down; }
-.amk-translateZ       { animation-name: amk-translateZ; }
 
 .amk-rotate-cw  { animation-name: amk-rotate-cw; }
 .amk-rotate-ccw { animation-name: amk-rotate-ccw; }
@@ -337,7 +328,6 @@
 .amk-translateX-out-right { animation-name: amk-translateX-out-right; }
 .amk-translateY-out-up    { animation-name: amk-translateY-out-up; }
 .amk-translateY-out-down  { animation-name: amk-translateY-out-down; }
-.amk-translateZ-out       { animation-name: amk-translateZ-out; }
 
 .amk-rotate-out-cw  { animation-name: amk-rotate-out-cw; }
 .amk-rotate-out-ccw { animation-name: amk-rotate-out-ccw; }

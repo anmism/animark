@@ -6,7 +6,10 @@
     "dev": "pnpm -r dev",
     "demo": "pnpm --filter animark-demo dev",
     "test": "pnpm -r test",
-    "clean": "pnpm -r exec rm -rf dist"
+    "clean": "pnpm -r exec rm -rf dist",
+    "publish:core": "pnpm --filter animark-core publish --no-git-checks",
+    "publish:react": "pnpm --filter animark-react publish --no-git-checks",
+    "publish:all": "pnpm build && pnpm publish:core && pnpm publish:react"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

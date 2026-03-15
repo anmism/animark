@@ -9,16 +9,15 @@ import { useBlockContext } from "./BlockContext";
 const LOOP_TYPES  = new Set(["pulse","shake","wiggle","heartbeat","float","magnetic"]);
 const EXIT_TYPES  = new Set([
   "fade-out","slide-out","scale-out","blur-out",
-  "translateX-out","translateY-out","translateZ-out",
+  "translateX-out","translateY-out",
   "rotate-out","rotateX-out","rotateY-out",
   "skew-out","scaleX-out","scaleY-out",
   "disappear","reveal-out",
 ]);
 
 const CLIP_TYPES  = new Set([
-  "slide","bounce","translateX","translateY","translateZ",
-  "rotate","rotateX","rotateY","skew","flip","glitch",
-  "slide-out","translateX-out","translateY-out","translateZ-out",
+  "slide","bounce","translateX","translateY","skew","flip","glitch",
+  "slide-out","translateX-out","translateY-out",
   "rotate-out","rotateX-out","rotateY-out","skew-out",
 ]);
 
@@ -37,7 +36,6 @@ function getClass(type: string, dir: string): string {
     case "slide":    return `amk-slide-${dir}`;
     case "translateX": return dir === "right" ? "amk-translateX-right" : "amk-translateX-left";
     case "translateY": return dir === "down"  ? "amk-translateY-down"  : "amk-translateY-up";
-    case "translateZ": return "amk-translateZ";
     case "rotate":   return dir === "left" ? "amk-rotate-ccw" : "amk-rotate-cw";
     case "rotateX":  return "amk-rotateX";
     case "rotateY":  return "amk-rotateY";
@@ -52,7 +50,6 @@ function getClass(type: string, dir: string): string {
     case "slide-out": return `amk-slide-out-${dir}`;
     case "translateX-out": return dir === "right" ? "amk-translateX-out-right" : "amk-translateX-out-left";
     case "translateY-out": return dir === "down"  ? "amk-translateY-out-down"  : "amk-translateY-out-up";
-    case "translateZ-out": return "amk-translateZ-out";
     case "rotate-out": return dir === "left" ? "amk-rotate-out-ccw" : "amk-rotate-out-cw";
     case "rotateX-out": return "amk-rotateX-out";
     case "rotateY-out": return "amk-rotateY-out";
@@ -78,8 +75,6 @@ function getAmountVars(type: string, amount?: number): Record<string, string> {
     case "translateX": case "translateY":
     case "translateX-out": case "translateY-out":
       return { "--amk-amount": `${amount}px`, "--amk-amount-neg": `-${amount}px` };
-    case "translateZ": case "translateZ-out":
-      return { "--amk-amount": `${-Math.abs(amount)}px` };
     case "rotate": case "rotateX": case "rotateY":
     case "rotate-out": case "rotateX-out": case "rotateY-out":
     case "skew": case "skew-out": case "wiggle":

@@ -1,7 +1,28 @@
 {
   "name": "animark-react",
-  "version": "1.0.0",
-  "description": "Animated inline Markdown for React. :::animation scopes inline :animate[text]{} spans.",
+  "version": "2.0.0",
+  "description": "Animated inline Markdown for React — per-scope isolated animation state",
+  "author": "anmism",
+  "license": "MIT",
+  "homepage": "https://github.com/anmism/animark#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anmism/animark.git",
+    "directory": "packages/animark-react"
+  },
+  "bugs": {
+    "url": "https://github.com/anmism/animark/issues"
+  },
+  "keywords": [
+    "react",
+    "markdown",
+    "animation",
+    "animark",
+    "remark",
+    "react-markdown",
+    "inline-animation",
+    "presentation"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -12,17 +33,29 @@
     },
     "./styles": "./src/animark.css"
   },
-  "files": ["dist", "src/animark.css"],
-  "publishConfig": { "access": "public" },
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "dev":   "tsc -p tsconfig.json --watch",
-    "test":  "vitest run"
+  "files": [
+    "dist",
+    "src/animark.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": ["react", "markdown", "animation", "animark", "remark", "inline"],
-  "license": "MIT",
+  "sideEffects": [
+    "src/animark.css"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build":          "tsc -p tsconfig.json",
+    "dev":            "tsc -p tsconfig.json --watch",
+    "test":           "vitest run",
+    "prepublishOnly": "pnpm build"
+  },
   "dependencies": {
-    "animark-core":     "workspace:*",
+    "animark-core":     "^1.0.0",
     "react-markdown":   "^10.1.0",
     "remark-directive": "^4.0.0"
   },

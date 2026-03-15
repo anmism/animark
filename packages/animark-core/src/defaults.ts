@@ -11,17 +11,23 @@ export const DEFAULT_ANIMATION_CONFIG: AnimationConfig = {
 };
 
 export const VALID_TYPES = new Set([
-  "fade","slide","scale","blur","bounce","flip","glitch",
-  "translateX","translateY","translateZ",
+  //in
+  "fade","slide","scale","blur","flip","bounce","glitch",
+  "translateX","translateY",
   "rotate","rotateX","rotateY",
-  "skew","scaleX","scaleY",
+  "skew",
+  "scaleX","scaleY",
   "appear","reveal",
+  //out
   "fade-out","slide-out","scale-out","blur-out",
-  "translateX-out","translateY-out","translateZ-out",
+  "translateX-out","translateY-out",
   "rotate-out","rotateX-out","rotateY-out",
-  "skew-out","scaleX-out","scaleY-out",
+  "skew-out",
+  "scaleX-out","scaleY-out",
   "disappear","reveal-out",
+  //attention
   "pulse","shake","wiggle","heartbeat","float","hover-lift","magnetic",
+  //text
   "typing","highlight",
 ]);
 
